@@ -1,0 +1,34 @@
+{% load static %}
+<article class="card w-100 bg-info-subtle mb-3" style="width: 18rem;">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-3">
+                <div class="border mb-4">
+                    <img src="{% static 'img/вумен_лягушка.jpg' %}" alt="Avatar" class="img-fluid">
+                </div>
+                <input class="form-control" type="number" value="5" placeholder="Default input"
+                       aria-label="default input example">
+            </div>
+
+            <div class="col-9">
+
+                <h5 class="card-title text-info-emphasis">
+                    <a href="{% url 'question' question.id %}">{{ question.title }}</a>
+                </h5>
+                <p class="card-text text-info-emphasis">{{ question.text }}</p>
+
+                <div class="d-flex gap-5">
+                    <a href="{% url 'question' question.id %}" class="card-link">Answer (3)</a>
+                    <div class="text-info-emphasis">
+
+                        Tags:
+                        <a href="{% url 'tag' 'Xcode' %}" class="card-link">Xcode</a>
+                        <a href="{% url 'tag' 'DevTools' %}" class="card-link">DevTools</a>
+                        <a href="{% url 'tag' 'Programming' %}" class="card-link">Programming</a>
+                        <a href="{% url 'tag' 'AutomatedTesting' %}" class="card-link">AutomatedTesting</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
